@@ -1,0 +1,123 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 40px 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Question Text */
+.container h1 {
+    font-size: 2.5rem;
+    color: #d6336c;
+    margin-bottom: 30px;
+}
+
+/* Buttons container */
+.buttons {
+    position: relative;
+    width: 320px;
+    height: 70px;
+    margin: 30px auto 0;
+}
+
+/* COMMON button style (🔥 key fix) */
+#yesBtn,
+#noBtn {
+    position: absolute;
+    width: 140px;
+    height: 55px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+/* YES button (fixed, left side) */
+#yesBtn {
+    left: 0;
+    top: 7px;
+    background-color: #ff4d6d;
+    color: white;
+    z-index: 2;
+}
+#yesBtn {
+    transition: transform 0.2s ease;
+}
+
+/* NO button (movable, starts right side) */
+#noBtn {
+    right: 0;
+    top: 7px;
+    background-color: #4dabf7;
+    color: #fff;
+}
+#noBtn {
+    position: absolute;
+    width: 140px;
+    height: 55px;
+    border-radius: 30px;
+    background-color: #4dabf7;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    /* 🔥 THIS makes movement smooth like the video */
+    transition: left 0.15s ease, top 0.15s ease;
+}
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    opacity: 0.8;
+}
+
+/* Heart Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 25px;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
